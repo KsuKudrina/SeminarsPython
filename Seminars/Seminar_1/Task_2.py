@@ -3,25 +3,26 @@
 Примеры:    - 1, 4, 8, 7, 5 -> 8
             - 78, 55, 36, 90, 2 -> 90
 '''
-
+# lst =[int(i) for i in input().split()] - задать массив
 def create_line():
-    s = []
+    lst = []
     for i in range(1,6):
         value = int(input('Введите целое число: '))
-        s.append(value)
-    return(s)
+        lst.append(value)
+    return(lst)
 
-def find_max(s):
-    max = s[0]
-    for i in s:
-        if i > max:
-            max = i
-    return max
-s = create_line()
-print(s)
-max = find_max(s)
-print(f'Максимальное значение: {max}')
+def find_max(lst):
+    max_ = lst[0]
+    for i in lst:
+        if i > max_:
+            max_ = i
+    return max_
+lst = create_line()
+print(lst)
+max_ = find_max(lst)
+print(f'Максимальное значение: {max_}')
 
+# print(max(lst))
     
 # try:
 #     numbers = []
