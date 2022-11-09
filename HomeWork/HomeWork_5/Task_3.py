@@ -43,9 +43,9 @@ def input_value(name):
     step = int(input(f'{name}, ваш ход: '))
     
     return step
-
+ 
 game_over = False
-
+counter = 0
 while not game_over:
     print_lst()
 
@@ -55,6 +55,7 @@ while not game_over:
         if step >= 1 and step <= 9:
             if (str(lst[step - 1]) not in 'XO'):
                 step_lst(step, symbol)
+                
             else:
                 print('Эта клетка занята! ')
                 continue
@@ -62,6 +63,8 @@ while not game_over:
             print('Введите число от 1 до 9! ')
             continue
         flag = False
+        counter += 1
+        
     else:
         symbol = 'O'
         step = input_value(player_2)
@@ -80,8 +83,12 @@ while not game_over:
     win = result(win_combo)
     if win != "":
         game_over = True
-    else:
+    elif counter < 4:
         game_over = False
+    else:
+        print('Ничья!')
+        win = 'Дружба'
+        break
 
 print_lst()
-print("Победил", win)
+print("Победил(а)", win)
