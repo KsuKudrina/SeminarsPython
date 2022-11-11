@@ -14,3 +14,6 @@ for i in n:
         sum_n += int(i) 
 print(sum_n)
 
+n = input('Введите вещественное число: ')
+sum = sum(map(int, n.replace('.', '')))
+print (sum)
